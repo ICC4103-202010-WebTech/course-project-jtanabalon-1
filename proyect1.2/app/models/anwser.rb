@@ -1,0 +1,2 @@
+class Anwser < ApplicationRecord
+end

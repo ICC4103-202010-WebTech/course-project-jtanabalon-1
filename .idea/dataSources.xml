@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="development" uuid="02fd39e8-e55e-4cee-a773-d62c054c0e45">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\joset\Documents\GitHub\course-project-jtanabalon-1\proyect1.2\db\development.sqlite3</jdbc-url>
+    </data-source>
+  </component>
+</project>

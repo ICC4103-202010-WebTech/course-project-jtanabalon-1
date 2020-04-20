@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  option: 2020-04-20 04:51:01
+
+two:
+  option: 2020-04-20 04:51:01
