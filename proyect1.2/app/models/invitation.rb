@@ -1,5 +1,6 @@
 class Invitation < ApplicationRecord
-  has_one :user
+  belongs_to :user
   belongs_to :event
-  has_one :vote
+  has_many :vote
+  validates :vote_id, uniqueness: true
 end

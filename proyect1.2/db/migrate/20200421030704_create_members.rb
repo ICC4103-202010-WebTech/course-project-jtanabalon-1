@@ -1,8 +1,9 @@
-class CreateAdmins < ActiveRecord::Migration[6.0]
+class CreateMembers < ActiveRecord::Migration[6.0]
   def change
-    create_table :admins do |t|
+    create_table :members do |t|
       t.references :user, null: false, foreign_key: true
       t.references :organization, null: false, foreign_key: true
+
       t.timestamps
     end
   end

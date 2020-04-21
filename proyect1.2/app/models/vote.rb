@@ -1,3 +1,4 @@
 class Vote < ApplicationRecord
-  has_one :anwser
+  has_many :anwser
+  belongs_to :invitation
 end

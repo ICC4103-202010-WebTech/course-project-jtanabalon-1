@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_085605) do
+ActiveRecord::Schema.define(version: 2020_04_21_031852) do
 
   create_table "admins", force: :cascade do |t|
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "organizations_id"
+    t.index ["organizations_id"], name: "index_admins_on_organizations_id"
     t.index ["user_id"], name: "index_admins_on_user_id"
   end
 
@@ -23,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_085605) do
     t.time "option"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "event_id"
+    t.index ["event_id"], name: "index_anwsers_on_event_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -48,25 +52,30 @@ ActiveRecord::Schema.define(version: 2020_04_20_085605) do
   end
 
   create_table "invitations", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "event_id", null: false
-    t.integer "vote_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "event_id"
+    t.integer "vote_id"
     t.index ["event_id"], name: "index_invitations_on_event_id"
     t.index ["user_id"], name: "index_invitations_on_user_id"
     t.index ["vote_id"], name: "index_invitations_on_vote_id"
   end
 
+  create_table "members", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "organization_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["organization_id"], name: "index_members_on_organization_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "user_id", null: false
-    t.integer "admin_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["admin_id"], name: "index_organizations_on_admin_id"
-    t.index ["user_id"], name: "index_organizations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,21 +88,19 @@ ActiveRecord::Schema.define(version: 2020_04_20_085605) do
 
   create_table "votes", force: :cascade do |t|
     t.string "anwsered"
-    t.integer "anwser_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "anwser_id"
     t.index ["anwser_id"], name: "index_votes_on_anwser_id"
   end
 
   add_foreign_key "admins", "users"
+  add_foreign_key "anwsers", "events"
   add_foreign_key "comments", "events"
   add_foreign_key "comments", "users"
   add_foreign_key "events", "organizations"
   add_foreign_key "events", "users"
-  add_foreign_key "invitations", "events"
-  add_foreign_key "invitations", "users"
-  add_foreign_key "invitations", "votes"
-  add_foreign_key "organizations", "admins"
-  add_foreign_key "organizations", "users"
+  add_foreign_key "members", "organizations"
+  add_foreign_key "members", "users"
   add_foreign_key "votes", "anwsers"
 end
