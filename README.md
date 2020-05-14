@@ -1,23 +1,12 @@
-"# course-project-jtanabalon-1" 
-Questions
-11. In my table of the model user, we got a validation that makes the name and email of it unique
-R. validates :name, uniqueness: true
-  validates :email, uniqueness: true
-12. I made a validation with a special format
-R.  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
-                             message:"ej: something@mail.cl"}
-13. In case that we eliminated an Event but before calling it it should also erreased them because the event is foreign key in the invitation and with that we could have an error, so on the CRUD D, before doing it, it should errease the vote,the answers made, the comments from it.
-14. Before the crud it should take a  look at admin and if he is the only admin in the organization,errase every comment created, every event created, invitation invited,and from the members of an organization. If everything is ok and can be deleated it could continou to errase the user.
-1. Event.find_by user_id: UserId
-2. Member.find_by organization_id: OrganizationId
-3. Event
-        .select('events.name')
-        .where('events.organization_id' => OrganizationId, 'events.privacity' => 'f')
-4. Event
-        .select('events.name')
-        .where('events.organization_id' => OrganizationId, 'events.privacity' => 't')
-5. Invitation
-            .select('invitation.user_id')
-            .where('invitation.event_id' => EventId)
-6. Invitation
-            .select('invitation.user_id')
+course project 2
+so, i got my home page with some few options in there.
+I couldn't get my bootstrap to work out or any UI because of installation or I don't know.
+So i simply took it of my app. So in my project you can enter in an organization and there we can see the admins of the organization.
+WE can also see the members and events, in the last one we can see the comments of it and we can see the invitation where we should be able to vote.
+It doesn't work the vote system, in the vote system we can select an answer or create one.
+Going back in the home page, we can also see the user, i don't know why but my ap1 v1 users can show because it does not have index.., but it have so I don't really know why, we should be able to see the organizations where he is.
+Last we can see the events in there.
+Also in the head of the pages whe can always go home or create an user.
+I didn't make an cascade deleting.
+if we try to access an user where it hasn't an event, or anything like that, the webb will fall
+You can see my resources and api views and controllers, with the scheme for more information about how it work my webapp
