@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   root "pages#home"
-  get 'search', to: 'pages#searcg'
+  get 'search', to: 'pages#search'
 
   resources :organizations do
-    resource :member
+    resource :members
+    resource :events
   end
 
   resources :users do
     resource :profiles, :member
+    resource :events
     resource :invitations do
       resource :events
       resource :vote do

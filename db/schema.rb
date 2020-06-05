@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_05_084443) do
+ActiveRecord::Schema.define(version: 2020_06_05_213241) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,13 +42,11 @@ ActiveRecord::Schema.define(version: 2020_06_05_084443) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id_id", null: false
-    t.integer "event_id_id", null: false
-    t.text "message"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id_id"], name: "index_comments_on_event_id_id"
-    t.index ["user_id_id"], name: "index_comments_on_user_id_id"
+    t.text "messa"
+    t.integer "user_id", null: false
+    t.integer "event_id", null: false
+    t.index ["event_id"], name: "index_comments_on_event_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -82,12 +80,10 @@ ActiveRecord::Schema.define(version: 2020_06_05_084443) do
 
   create_table "invitations", force: :cascade do |t|
     t.boolean "accept"
-    t.integer "user_id_id", null: false
-    t.integer "event_id_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id_id"], name: "index_invitations_on_event_id_id"
-    t.index ["user_id_id"], name: "index_invitations_on_user_id_id"
+    t.integer "user_id", null: false
+    t.integer "event_id", null: false
+    t.index ["event_id"], name: "index_invitations_on_event_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
   create_table "members", force: :cascade do |t|
@@ -146,13 +142,13 @@ ActiveRecord::Schema.define(version: 2020_06_05_084443) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "votes"
-  add_foreign_key "comments", "event_ids"
-  add_foreign_key "comments", "user_ids"
+  add_foreign_key "comments", "events"
+  add_foreign_key "comments", "users"
   add_foreign_key "events", "organizations"
   add_foreign_key "file_events", "events"
   add_foreign_key "image_events", "events"
-  add_foreign_key "invitations", "event_ids"
-  add_foreign_key "invitations", "user_ids"
+  add_foreign_key "invitations", "events"
+  add_foreign_key "invitations", "users"
   add_foreign_key "members", "organizations"
   add_foreign_key "members", "users"
   add_foreign_key "organizations", "users"
