@@ -14,9 +14,8 @@ class InvitationsTest < ApplicationSystemTestCase
     visit invitations_url
     click_on "New Invitation"
 
-    fill_in "Event", with: @invitation.event_id
-    fill_in "User", with: @invitation.user_id
-    fill_in "Vote", with: @invitation.vote_id
+    fill_in "Event id", with: @invitation.event_id_id
+    fill_in "User id", with: @invitation.user_id_id
     click_on "Create Invitation"
 
     assert_text "Invitation was successfully created"
@@ -27,9 +26,8 @@ class InvitationsTest < ApplicationSystemTestCase
     visit invitations_url
     click_on "Edit", match: :first
 
-    fill_in "Event", with: @invitation.event_id
-    fill_in "User", with: @invitation.user_id
-    fill_in "Vote", with: @invitation.vote_id
+    fill_in "Event id", with: @invitation.event_id_id
+    fill_in "User id", with: @invitation.user_id_id
     click_on "Update Invitation"
 
     assert_text "Invitation was successfully updated"

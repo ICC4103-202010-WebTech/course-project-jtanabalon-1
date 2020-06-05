@@ -14,7 +14,8 @@ class AnswersTest < ApplicationSystemTestCase
     visit answers_url
     click_on "New Answer"
 
-    fill_in "Option", with: @answer.option
+    fill_in "Dat", with: @answer.dat
+    fill_in "Vote id", with: @answer.vote_id_id
     click_on "Create Answer"
 
     assert_text "Answer was successfully created"
@@ -25,7 +26,8 @@ class AnswersTest < ApplicationSystemTestCase
     visit answers_url
     click_on "Edit", match: :first
 
-    fill_in "Option", with: @answer.option
+    fill_in "Dat", with: @answer.dat
+    fill_in "Vote id", with: @answer.vote_id_id
     click_on "Update Answer"
 
     assert_text "Answer was successfully updated"

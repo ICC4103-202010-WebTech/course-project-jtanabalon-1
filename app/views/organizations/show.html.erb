@@ -10,20 +10,5 @@
   <%= @organization.description %>
 </p>
 
-<p>
-  <strong>Users:</strong>
-  <%= @organization.users_id %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @organization.admin_id %>
-</p>
-<p>
-  <strong>Show Members</strong>
-  <%= @member.user_id %>
-</p>
-<%= link_to 'Back', api_v1_organization_member_users_path %>
-
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>

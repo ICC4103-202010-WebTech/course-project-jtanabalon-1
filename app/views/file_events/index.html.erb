@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>File Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Event</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @file_events.each do |file_event| %>
+      <tr>
+        <td><%= file_event.content %></td>
+        <td><%= file_event.event_id_id %></td>
+        <td><%= link_to 'Show', file_event %></td>
+        <td><%= link_to 'Edit', edit_file_event_path(file_event) %></td>
+        <td><%= link_to 'Destroy', file_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New File Event', new_file_event_path %>

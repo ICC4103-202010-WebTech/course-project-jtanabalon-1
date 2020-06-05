@@ -14,8 +14,7 @@ class VotesTest < ApplicationSystemTestCase
     visit votes_url
     click_on "New Vote"
 
-    fill_in "Anwser", with: @vote.anwser_id
-    fill_in "Anwsered", with: @vote.anwsered
+    fill_in "Invitation id", with: @vote.invitation_id_id
     click_on "Create Vote"
 
     assert_text "Vote was successfully created"
@@ -26,8 +25,7 @@ class VotesTest < ApplicationSystemTestCase
     visit votes_url
     click_on "Edit", match: :first
 
-    fill_in "Anwser", with: @vote.anwser_id
-    fill_in "Anwsered", with: @vote.anwsered
+    fill_in "Invitation id", with: @vote.invitation_id_id
     click_on "Update Vote"
 
     assert_text "Vote was successfully updated"

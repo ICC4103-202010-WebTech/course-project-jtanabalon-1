@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Video Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Event</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @video_events.each do |video_event| %>
+      <tr>
+        <td><%= video_event.content %></td>
+        <td><%= video_event.event_id_id %></td>
+        <td><%= link_to 'Show', video_event %></td>
+        <td><%= link_to 'Edit', edit_video_event_path(video_event) %></td>
+        <td><%= link_to 'Destroy', video_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Video Event', new_video_event_path %>

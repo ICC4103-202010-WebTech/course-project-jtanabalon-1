@@ -1,3 +1,3 @@
 class Answer < ApplicationRecord
-  belongs_to :event
+  belongs_to :vote_id
 end

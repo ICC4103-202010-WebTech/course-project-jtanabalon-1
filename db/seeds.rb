@@ -5,6 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Organization.create(name:"Family", description:"happy family")
-Admin.create(user_id:1, organization_id:1)
-Event.create(name:"FirstEvent", location:"home", privacity:"true",user_id:1, organization_id:1)

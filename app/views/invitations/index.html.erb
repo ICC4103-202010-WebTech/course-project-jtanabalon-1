@@ -7,7 +7,6 @@
     <tr>
       <th>User</th>
       <th>Event</th>
-      <th>Vote</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +14,8 @@
   <tbody>
     <% @invitations.each do |invitation| %>
       <tr>
-        <td><%= invitation.user_id %></td>
-        <td><%= invitation.event_id %></td>
-        <td><%= invitation.vote_id %></td>
+        <td><%= invitation.user_id_id %></td>
+        <td><%= invitation.event_id_id %></td>
         <td><%= link_to 'Show', invitation %></td>
         <td><%= link_to 'Edit', edit_invitation_path(invitation) %></td>
         <td><%= link_to 'Destroy', invitation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,4 +26,4 @@
 
 <br>
 
-<a href ="/">Home </a>
+<%= link_to 'New Invitation', new_invitation_path %>

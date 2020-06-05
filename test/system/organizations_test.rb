@@ -14,10 +14,8 @@ class OrganizationsTest < ApplicationSystemTestCase
     visit organizations_url
     click_on "New Organization"
 
-    fill_in "Admin", with: @organization.admin_id
     fill_in "Description", with: @organization.description
     fill_in "Name", with: @organization.name
-    fill_in "Users", with: @organization.users_id
     click_on "Create Organization"
 
     assert_text "Organization was successfully created"
@@ -28,10 +26,8 @@ class OrganizationsTest < ApplicationSystemTestCase
     visit organizations_url
     click_on "Edit", match: :first
 
-    fill_in "Admin", with: @organization.admin_id
     fill_in "Description", with: @organization.description
     fill_in "Name", with: @organization.name
-    fill_in "Users", with: @organization.users_id
     click_on "Update Organization"
 
     assert_text "Organization was successfully updated"

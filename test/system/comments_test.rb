@@ -14,9 +14,9 @@ class CommentsTest < ApplicationSystemTestCase
     visit comments_url
     click_on "New Comment"
 
-    fill_in "Event", with: @comment.event_id
+    fill_in "Event id", with: @comment.event_id_id
     fill_in "Message", with: @comment.message
-    fill_in "User", with: @comment.user_id
+    fill_in "User id", with: @comment.user_id_id
     click_on "Create Comment"
 
     assert_text "Comment was successfully created"
@@ -27,9 +27,9 @@ class CommentsTest < ApplicationSystemTestCase
     visit comments_url
     click_on "Edit", match: :first
 
-    fill_in "Event", with: @comment.event_id
+    fill_in "Event id", with: @comment.event_id_id
     fill_in "Message", with: @comment.message
-    fill_in "User", with: @comment.user_id
+    fill_in "User id", with: @comment.user_id_id
     click_on "Update Comment"
 
     assert_text "Comment was successfully updated"

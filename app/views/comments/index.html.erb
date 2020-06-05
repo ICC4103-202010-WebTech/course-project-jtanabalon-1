@@ -15,8 +15,8 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.user_id %></td>
-        <td><%= comment.event_id %></td>
+        <td><%= comment.user_id_id %></td>
+        <td><%= comment.event_id_id %></td>
         <td><%= comment.message %></td>
         <td><%= link_to 'Show', comment %></td>
         <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
@@ -29,4 +29,3 @@
 <br>
 
 <%= link_to 'New Comment', new_comment_path %>
-<a href ="/">Home </a>
