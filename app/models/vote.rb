@@ -1,3 +1,4 @@
 class Vote < ApplicationRecord
-  belongs_to :invitation_id
+  belongs_to :invitation
+  has_one :answer, :dependent => :destroy
 end

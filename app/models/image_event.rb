@@ -1,3 +1,3 @@
 class ImageEvent < ApplicationRecord
-  belongs_to :event_id
+  belongs_to :event
 end

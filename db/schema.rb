@@ -10,14 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_083753) do
+ActiveRecord::Schema.define(version: 2020_06_05_084443) do
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "answers", force: :cascade do |t|
     t.datetime "dat"
-    t.integer "vote_id_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["vote_id_id"], name: "index_answers_on_vote_id_id"
+    t.integer "vote_id", null: false
+    t.index ["vote_id"], name: "index_answers_on_vote_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -37,22 +58,26 @@ ActiveRecord::Schema.define(version: 2020_06_04_083753) do
     t.boolean "privacy"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "organization_id", null: false
+    t.string "banner_image"
+    t.string "location"
+    t.index ["organization_id"], name: "index_events_on_organization_id"
   end
 
   create_table "file_events", force: :cascade do |t|
     t.string "content"
-    t.integer "event_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id_id"], name: "index_file_events_on_event_id_id"
+    t.integer "event_id", null: false
+    t.index ["event_id"], name: "index_file_events_on_event_id"
   end
 
   create_table "image_events", force: :cascade do |t|
     t.string "content"
-    t.integer "event_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id_id"], name: "index_image_events_on_event_id_id"
+    t.integer "event_id", null: false
+    t.index ["event_id"], name: "index_image_events_on_event_id"
   end
 
   create_table "invitations", force: :cascade do |t|
@@ -79,6 +104,8 @@ ActiveRecord::Schema.define(version: 2020_06_04_083753) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_organizations_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -87,10 +114,10 @@ ActiveRecord::Schema.define(version: 2020_06_04_083753) do
     t.string "picture"
     t.text "bio"
     t.string "location"
-    t.integer "user_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id_id"], name: "index_profiles_on_user_id_id"
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -104,29 +131,32 @@ ActiveRecord::Schema.define(version: 2020_06_04_083753) do
 
   create_table "video_events", force: :cascade do |t|
     t.string "content"
-    t.integer "event_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id_id"], name: "index_video_events_on_event_id_id"
+    t.integer "event_id", null: false
+    t.index ["event_id"], name: "index_video_events_on_event_id"
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "invitation_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["invitation_id_id"], name: "index_votes_on_invitation_id_id"
+    t.integer "invitation_id", null: false
+    t.index ["invitation_id"], name: "index_votes_on_invitation_id"
   end
 
-  add_foreign_key "answers", "vote_ids"
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "answers", "votes"
   add_foreign_key "comments", "event_ids"
   add_foreign_key "comments", "user_ids"
-  add_foreign_key "file_events", "event_ids"
-  add_foreign_key "image_events", "event_ids"
+  add_foreign_key "events", "organizations"
+  add_foreign_key "file_events", "events"
+  add_foreign_key "image_events", "events"
   add_foreign_key "invitations", "event_ids"
   add_foreign_key "invitations", "user_ids"
   add_foreign_key "members", "organizations"
   add_foreign_key "members", "users"
-  add_foreign_key "profiles", "user_ids"
-  add_foreign_key "video_events", "event_ids"
-  add_foreign_key "votes", "invitation_ids"
+  add_foreign_key "organizations", "users"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "video_events", "events"
+  add_foreign_key "votes", "invitations"
 end

@@ -8,7 +8,16 @@
 
 #### Things that I did
 1. I start a new project all over because i thought it was messy and needed to start from the bottom while keeping most of the DB.
-2. Implemented the faker bot.
+2. Implemented the faker bot.(1/2)
 3. Active storage implemented.
-4. Views,controller and model.
+4. Views(1/2),controller(1/2) and model.
 5. Some queries.
+
+
+#### Not implemented
+1. google calendar
+2. google email entry
+3. message inbox
+4. postman
+5. hyperlinks
+6. bootstrap

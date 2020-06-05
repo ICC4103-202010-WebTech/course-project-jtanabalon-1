@@ -1,4 +1,4 @@
 class Member < ApplicationRecord
-  belongs_to :user
-  belongs_to :organization
+  belongs_to :user_id
+  belongs_to :organization_id
 end
