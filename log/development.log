@@ -10625,3 +10625,680 @@ puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.5) lib/puma/server.rb:472:in `process_client'
 puma (4.3.5) lib/puma/server.rb:328:in `block in run'
 puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-05 19:36:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1461)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms | Allocations: 4504)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5:   <p>Upcoming events are truly awesome in this COVID-19 season!</p>
+     6: </div>
+     7: <div class="row">
+     8:   <% @events.each do |event| %>
+     9:     <%= render partial: 'events/event_tile', locals: { event: event } %>
+    10:   <% end %>
+    11: </div>
+  
+app/views/pages/home.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:37:09 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1454)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 4418)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5:   <p>Upcoming events are truly awesome in this COVID-19 season!</p>
+     6: </div>
+     7: <div class="row">
+     8:   <% @events.each do |event| %>
+     9:     <%= render partial: 'events/index', locals: { event: event } %>
+    10:   <% end %>
+    11: </div>
+  
+app/views/pages/home.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:37:22 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 357.2ms | Allocations: 153211)
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 0.5ms | Allocations: 156158)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `event' for #<#<Class:0x00007ff5075a7248>:0x00007ff5075a51c8>
+Did you mean?  event_url):
+    5:   <p>Upcoming events are truly awesome in this COVID-19 season!</p>
+    6: </div>
+    7: <div class="row">
+    8:     <%= render partial: 'events/index', locals: { event: event } %>
+    9: </div>
+  
+app/views/pages/home.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:38:02 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 318.3ms | Allocations: 153180)
+Completed 500 Internal Server Error in 325ms (ActiveRecord: 0.5ms | Allocations: 156127)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `event' for #<#<Class:0x00007ff50c0e8608>:0x00007ff50c0f2a18>
+Did you mean?  event_url):
+    5:   <p>Upcoming events are truly awesome in this COVID-19 season!</p>
+    6: </div>
+    7: <div class="row">
+    8:     <%= render partial: 'events/index', locals: { event_url: event } %>
+    9: </div>
+  
+app/views/pages/home.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:38:12 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1072)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 4017)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"events"}, missing required keys: [:id]):
+    5:   <p>Upcoming events are truly awesome in this COVID-19 season!</p>
+    6: </div>
+    7: <div class="row">
+    8:     <%= render partial: 'events/index', locals: { event: event_url } %>
+    9: </div>
+  
+app/views/pages/home.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:38:42 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1057)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 4002)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"events"}, missing required keys: [:id]):
+    5:   <p>Upcoming events are truly awesome in this COVID-19 season!</p>
+    6: </div>
+    7: <div class="row">
+    8:     <%= render partial: 'events/index{1}', locals: { event: event_url } %>
+    9: </div>
+  
+app/views/pages/home.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:39:41 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.43.0
+Time: 3071ms
+Built at: 06/05/2020 7:39:51 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 500 Internal Server Error in 10001ms (ActiveRecord: 0.5ms | Allocations: 143778)
+
+
+  
+ActionView::Template::Error (undefined method `user_profile_path' for #<#<Class:0x00007ff507466ca8>:0x00007ff50746d828>
+Did you mean?  user_profiles_path
+               user_profiles_url):
+    22:             <a class="nav-link" href=<%= root_path %>>Home <span class="sr-only">(current)</span></a>
+    23:           </li>
+    24:           <li class="nav-item">
+    25:             <a class="nav-link" href=<%= user_profile_path(@user) %>>Profile</a>
+    26:           </li>
+    27:           <li class="nav-item dropdown">
+    28:             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  
+app/views/layouts/application.html.erb:25
+Started GET "/" for ::1 at 2020-06-05 19:40:46 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 0.7ms | Allocations: 87930)
+
+
+  
+ActionView::Template::Error (undefined method `organization_event_path' for #<#<Class:0x00007ff5074c7f30>:0x00007ff5074c5e10>
+Did you mean?  organization_events_path
+               organization_path
+               organization_events_url
+               organizations_path
+               organization_members_path):
+    39:             </a>
+    40:             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    41:               <a class="dropdown-item" href=<%= organizations_path(@user) %>>My Organizations</a>
+    42:               <a class="dropdown-item" href=<%= organization_event_path(@user) %>>Event Organizations</a>
+    43:             </div>
+    44:           </li>
+    45: 
+  
+app/views/layouts/application.html.erb:42
+Started GET "/" for ::1 at 2020-06-05 19:41:02 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 133ms (Views: 10.6ms | ActiveRecord: 0.5ms | Allocations: 8282)
+
+
+Started GET "/" for ::1 at 2020-06-05 19:41:41 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 7099)
+
+
+Started GET "/" for ::1 at 2020-06-05 19:41:43 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 7093)
+
+
+Started GET "/users/1/profiles" for ::1 at 2020-06-05 19:41:43 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Completed 404 Not Found in 7ms (ActiveRecord: 0.7ms | Allocations: 3319)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Profile without an ID):
+  
+app/controllers/profiles_controller.rb:67:in `set_profile'
+Started GET "/" for ::1 at 2020-06-05 19:41:53 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 0.5ms | Allocations: 7096)
+
+
+Started GET "/" for ::1 at 2020-06-05 19:41:55 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 7087)
+
+
+Started GET "/users/1/invitations" for ::1 at 2020-06-05 19:41:59 -0400
+Processing by InvitationsController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 851)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Invitation without an ID):
+  
+app/controllers/invitations_controller.rb:67:in `set_invitation'
+Started GET "/" for ::1 at 2020-06-05 19:42:01 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 7088)
+
+
+Started GET "/users/1/events" for ::1 at 2020-06-05 19:42:02 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"user_id"=>"1"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 730)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event without an ID):
+  
+app/controllers/events_controller.rb:67:in `set_event'
+Started GET "/" for ::1 at 2020-06-05 19:42:07 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.4ms | Allocations: 7093)
+
+
+Started GET "/" for ::1 at 2020-06-05 19:42:08 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.5ms | Allocations: 7089)
+
+
+Started GET "/organizations.1" for ::1 at 2020-06-05 19:42:11 -0400
+Processing by OrganizationsController#index as 
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  ↳ app/views/organizations/index.html.erb:15
+  Rendered organizations/index.html.erb within layouts/application (Duration: 24.8ms | Allocations: 16630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.1ms | Allocations: 25569)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"profiles", :user_id=>nil}, missing required keys: [:user_id]):
+    22:             <a class="nav-link" href=<%= root_path %>>Home <span class="sr-only">(current)</span></a>
+    23:           </li>
+    24:           <li class="nav-item">
+    25:             <a class="nav-link" href=<%= user_profiles_path(@user) %>>Profile</a>
+    26:           </li>
+    27:           <li class="nav-item dropdown">
+    28:             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  
+app/views/layouts/application.html.erb:25
+Started GET "/organizations.1" for ::1 at 2020-06-05 19:42:46 -0400
+Processing by OrganizationsController#index as 
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  ↳ app/views/organizations/index.html.erb:15
+  Rendered organizations/index.html.erb within layouts/application (Duration: 18.6ms | Allocations: 12434)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.5ms | Allocations: 19575)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"events", :user_id=>nil}, missing required keys: [:user_id]):
+    26:               Events
+    27:             </a>
+    28:             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    29:               <a class="dropdown-item" href=<%= user_events_path(@user) %>>Events</a>
+    30:               <a class="dropdown-item" href=<%= user_invitations_path(@user) %>>Events Invitations</a>
+    31:             </div>
+    32:           </li>
+  
+app/views/layouts/application.html.erb:29
+Started GET "/" for ::1 at 2020-06-05 19:44:36 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 212)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 80.2ms | ActiveRecord: 2.4ms | Allocations: 50766)
+
+
+Started GET "/" for ::1 at 2020-06-05 19:44:41 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 36.1ms | ActiveRecord: 0.6ms | Allocations: 7116)
+
+
+Started GET "/" for ::1 at 2020-06-05 19:48:02 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 216)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 2.5ms | Allocations: 47382)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery3' with type 'text/css'
+Checked in these paths: 
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/config
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/images
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actioncable-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activestorage-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionview-6.0.3.1/lib/assets/compiled
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/node_modules
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:48:25 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms | Allocations: 9241)
+
+
+  
+ActionView::Template::Error (couldn't find file 'popper' with type 'text/css'
+Checked in these paths: 
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/config
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/images
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actioncable-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activestorage-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionview-6.0.3.1/lib/assets/compiled
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/node_modules
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:50:27 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 254)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 2.4ms | Allocations: 47563)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/config
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/images
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actioncable-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activestorage-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionview-6.0.3.1/lib/assets/compiled
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/node_modules
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:51:42 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms | Allocations: 9453)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/config
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/images
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actioncable-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activestorage-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionview-6.0.3.1/lib/assets/compiled
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/node_modules
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:51:54 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 9763)
+
+
+  
+ActionView::Template::Error (couldn't find file 'bootstrap' with type 'text/css'
+Checked in these paths: 
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/config
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/images
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/app/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actioncable-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/activestorage-6.0.3.1/app/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/actionview-6.0.3.1/lib/assets/compiled
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/node_modules
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/popper_js-1.16.0/assets/javascripts
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/stylesheets
+  /Users/mariaignaciaanabalondiaz/.rbenv/versions/2.6.6/lib/ruby/gems/2.6.0/gems/bootstrap-4.3.1/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:15
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:55:12 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 208)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 2.5ms | Allocations: 48868)
+
+
+  
+ActionView::Template::Error (require_self can only be called once per source file):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/stylesheets/application.css:17
+app/views/layouts/application.html.erb:8
+Started GET "/" for ::1 at 2020-06-05 19:55:31 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations"[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/mariaignaciaanabalondiaz/Documents/GitHub/course-project-jtanabalon-1/public/packs
+[Webpacker] Hash: b44752968732ad4a755a
+Version: webpack 4.43.0
+Time: 4020ms
+Built at: 06/05/2020 7:55:46 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-359d828fdf771315918b.js    433 KiB  application  [emitted] [immutable]  application
+js/application-359d828fdf771315918b.js.map    506 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-359d828fdf771315918b.js js/application-359d828fdf771315918b.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+Completed 200 OK in 14795ms (Views: 14790.0ms | ActiveRecord: 0.6ms | Allocations: 113619)
+
+
