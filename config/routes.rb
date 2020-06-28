@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "pages#home"
   get 'search', to: 'pages#search'
 
@@ -22,5 +23,6 @@ Rails.application.routes.draw do
     resources :image_events
     resources :file_events
   end
+  post 'users/:user_id/profiles/new', to: "profiles#new"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

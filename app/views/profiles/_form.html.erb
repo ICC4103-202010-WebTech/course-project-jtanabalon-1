@@ -1,4 +1,4 @@
-<%= form_with(model: profile, local: true) do |form| %>
+<%= form_with(xml: profile, local: true) do |form| %>
   <% if profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -37,8 +37,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id_id %>
-    <%= form.text_field :user_id_id %>
+    <%= form.label :user_id_id == current_user%>
+    <%= form.text_field :user_id_id == current_user%>
   </div>
 
   <div class="actions">

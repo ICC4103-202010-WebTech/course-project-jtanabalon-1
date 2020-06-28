@@ -13,6 +13,7 @@
 4. Views(1/2),controller(1/2) and model.
 5. Some queries.
 6. Seed
+7.bootstrap
 
 
 #### Not implemented
@@ -21,4 +22,3 @@
 3. message inbox
 4. postman
 5. hyperlinks
-6. bootstrap

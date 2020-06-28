@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @public_events = Event.all.where("privacy = ?",false)
-    @user = User.find(1)
+    @user = User.find(10)
     @invitation = Invitation.all
     @show_events=[]
     @public_events.each do |t|

@@ -22,31 +22,38 @@
             <a class="nav-link" href=<%= root_path %>>Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=<%= user_profiles_path(@user) %>>Profile</a>
+            <%if user_signed_in? %>
+              <%if current_user.profile == nil%>
+                <a class="nav-link" href=<%= new_user_profiles_path(current_user) %>>Profile</a>
+              <%else %>
+                <a class="nav-link" href=<%= current_user.profile %>>Profile</a>
+               <%end %>
+             <%end %>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Events
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href=<%= user_events_path(@user) %>>Events</a>
-              <a class="dropdown-item" href=<%= user_invitations_path(@user) %>>Events Invitations</a>
-            </div>
+            <%if user_signed_in? %>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Events
+              </a>
+            <%end %>
+
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Organizations
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href=<%= organizations_path(@user) %>>My Organizations</a>
-              <a class="dropdown-item" href=<%= organization_events_path(@user) %>>Event Organizations</a>
-            </div>
+            <%if user_signed_in? %>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Organizations
+              </a>
+            <%end %>
           </li>
 
 
         </ul>
         <span class="navbar-text mr-3">
-            Welcome, <%= @user.username %>
+          <%if user_signed_in? %>
+            Welcome, <%= current_user.username %>
+          <%else %>
+            Welcome
+          <%end %>
           </span>
         <form class="form-inline my-2 my-lg-0" action="/search">
           <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
