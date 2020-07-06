@@ -2,12 +2,12 @@ class PagesController < ApplicationController
   def home
     @public_events = Event.all.where("privacy = ?",false)
     @user = User.find(10)
-    @invitation = Invitation.all
+    @invitation_u = Invitation.all.where("user_id = ?",current_user.id)
     @show_events=[]
     @public_events.each do |t|
       @show_events.append(t)
     end
-    @invitation.each do |k|
+    @invitation_u.each do |k|
       if j.id=k.user_id
         @show_events.append(k.event_id)
 

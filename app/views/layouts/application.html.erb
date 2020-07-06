@@ -24,23 +24,22 @@
           <li class="nav-item">
             <%if user_signed_in? %>
               <%if current_user.profile == nil%>
-                <a class="nav-link" href=<%= new_user_profiles_path(current_user) %>>Profile</a>
+                <a class="nav-link" href=<%= new_user_profiles_path(current_user) %>>Profiles</a>
               <%else %>
-                <a class="nav-link" href=<%= current_user.profile %>>Profile</a>
+                <a class="nav-link" href=<%= current_user.profile %>>Profiles</a>
                <%end %>
              <%end %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
             <%if user_signed_in? %>
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Events
+              <a class="nav-link " href=<%= events_url %>  role="button" >Events
               </a>
             <%end %>
 
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item">
             <%if user_signed_in? %>
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link" href=<%= organizations_url %> >
                 Organizations
               </a>
             <%end %>
@@ -48,17 +47,20 @@
 
 
         </ul>
-        <span class="navbar-text mr-3">
-          <%if user_signed_in? %>
-            Welcome, <%= current_user.username %>
-          <%else %>
-            Welcome
-          <%end %>
-          </span>
         <form class="form-inline my-2 my-lg-0" action="/search">
           <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search
+          </button>
         </form>
+        <span class="navbar-text mr-3">
+          <%if current_user %>
+            <%= link_to "Sing out" , destroy_user_session_path, method: :delete %>
+
+          <%else %>
+            <%= link_to "Sing in " , new_user_session_path %> |
+            <%= link_to "Join us" , new_user_registration_path%>
+          <%end %>
+        </span>
       </div>
     </nav>
   </header>
@@ -80,7 +82,7 @@
   </div>
 
   <footer class="footer mt-auto py-3">
-      <span class="text-muted">Proyect 3 <br>by jose tomas anabalon</span>
+      <span class="text-muted">Final Demo<br>by Jose Tomas Anabalon</span>
   </footer>
   </body>
 </html>

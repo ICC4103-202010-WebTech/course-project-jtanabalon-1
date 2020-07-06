@@ -2,9 +2,14 @@
   <h2>Welcome to SocialEvent Organization App</h2>
 </div>
 <%if current_user %>
-    <div class ="row ml-0 tab-pane">
-        <%= link_to "Sing out " , destroy_user_session_path, method: :delete %>
-    </div>
+  <div class = "column">
+    <%=link_to "Invitations", invitations_url %>
+  </div>
+  <h4> Look at all this public events</h4>
+  <div class="row event-list">
+    <% @public_events.each do |event| %>
+      <%= render partial: 'events/event_tile', locals: { event: event } %>
+    <% end %>
   <%else %>
   <div class ="row ml-0 tab-pane">
     <%= link_to "Sing in " , new_user_session_path %>
@@ -20,4 +25,5 @@
     </br>
   </div>
 <%end %>
+</div>
 
