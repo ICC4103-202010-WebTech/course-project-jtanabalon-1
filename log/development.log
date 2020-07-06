@@ -54594,3 +54594,652 @@ Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 1020)
 ActiveRecord::RecordNotFound (Couldn't find Invitation without an ID):
   
 app/controllers/invitations_controller.rb:67:in `set_invitation'
+Started GET "/invitations" for ::1 at 2020-07-06 06:33:18 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by InvitationsController#show as HTML
+Completed 404 Not Found in 17ms (ActiveRecord: 0.9ms | Allocations: 3331)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Invitation without an ID):
+  
+app/controllers/invitations_controller.rb:67:in `set_invitation'
+Started GET "/invitations" for ::1 at 2020-07-06 06:35:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by InvitationsController#show as HTML
+Completed 404 Not Found in 6ms (ActiveRecord: 0.9ms | Allocations: 3331)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Invitation without an ID):
+  
+app/controllers/invitations_controller.rb:67:in `set_invitation'
+Started GET "/invitations" for ::1 at 2020-07-06 06:37:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by InvitationsController#show as HTML
+Completed 404 Not Found in 7ms (ActiveRecord: 1.0ms | Allocations: 3331)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Invitation without an ID):
+  
+app/controllers/invitations_controller.rb:67:in `set_invitation'
+Started GET "/organizations" for ::1 at 2020-07-06 06:37:31 -0400
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  ↳ app/views/organizations/index.html.erb:15
+  Rendered organizations/index.html.erb within layouts/application (Duration: 43.3ms | Allocations: 16679)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 149ms (Views: 119.3ms | ActiveRecord: 2.5ms | Allocations: 40329)
+
+
+Started GET "/organizations" for ::1 at 2020-07-06 06:37:33 -0400
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  ↳ app/views/organizations/index.html.erb:15
+  Rendered organizations/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 12190)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.8ms | Allocations: 20196)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:37:34 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 437.8ms | Allocations: 209240)
+Completed 500 Internal Server Error in 493ms (ActiveRecord: 1.4ms | Allocations: 227501)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `invitations' for #<#<Class:0x00007fa860a28c48>:0x00007fa860a318e8>
+Did you mean?  @invitation_u):
+    3: </div>
+    4: <%if current_user %>
+    5:   <div class = "column">
+    6:     <%=link_to "Invitations", invitations %>
+    7:   </div>
+    8:   <h4> Look at all this public events</h4>
+    9:   <div class="row event-list">
+  
+app/views/pages/home.html.erb:6
+Started GET "/" for ::1 at 2020-07-06 06:38:04 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 517.0ms | Allocations: 209159)
+Completed 500 Internal Server Error in 524ms (ActiveRecord: 0.7ms | Allocations: 213357)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `invitations_u' for #<#<Class:0x00007fa85dedd070>:0x00007fa85deef4c8>
+Did you mean?  invitations_url
+               @invitation_u
+               invitations_path):
+    3: </div>
+    4: <%if current_user %>
+    5:   <div class = "column">
+    6:     <%=link_to "Invitations", invitations_u %>
+    7:   </div>
+    8:   <h4> Look at all this public events</h4>
+    9:   <div class="row event-list">
+  
+app/views/pages/home.html.erb:6
+Started GET "/" for ::1 at 2020-07-06 06:38:17 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 514.1ms | Allocations: 209029)
+Completed 500 Internal Server Error in 521ms (ActiveRecord: 1.0ms | Allocations: 212380)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `invitations_u' for #<#<Class:0x00007fa85dedd070>:0x00007fa85d7deee0>
+Did you mean?  invitations_url
+               @invitation_u
+               invitations_path):
+    3: </div>
+    4: <%if current_user %>
+    5:   <div class = "column">
+    6:     <%=link_to "Invitations", @invitation_u %>
+    7:   </div>
+    8:   <h4> Look at all this public events</h4>
+    9:   <div class="row event-list">
+  
+app/views/pages/home.html.erb:6
+Started GET "/" for ::1 at 2020-07-06 06:38:39 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.8ms | Allocations: 309)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1637)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 25ms (Views: 18.4ms | ActiveRecord: 1.0ms | Allocations: 13001)
+
+
+Started GET "/invitations" for ::1 at 2020-07-06 06:38:42 -0400
+Processing by InvitationsController#show as HTML
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 815)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Invitation without an ID):
+  
+app/controllers/invitations_controller.rb:67:in `set_invitation'
+Started GET "/" for ::1 at 2020-07-06 06:39:28 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1589)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 24ms (Views: 18.3ms | ActiveRecord: 0.8ms | Allocations: 12946)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:39:33 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1021)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 20ms (Views: 14.7ms | ActiveRecord: 0.9ms | Allocations: 10878)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:40:32 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1594)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 26ms (Views: 19.2ms | ActiveRecord: 1.0ms | Allocations: 12954)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:40:41 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1593)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 41ms (Views: 34.9ms | ActiveRecord: 1.0ms | Allocations: 12953)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:41:41 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.5ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1605)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 24ms (Views: 17.7ms | ActiveRecord: 0.9ms | Allocations: 12965)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:41:56 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.5ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1600)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 24ms (Views: 18.4ms | ActiveRecord: 0.9ms | Allocations: 12960)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:42:14 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1021)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 29ms (Views: 23.4ms | ActiveRecord: 0.9ms | Allocations: 11011)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:42:16 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.5ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1605)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 24ms (Views: 17.7ms | ActiveRecord: 0.9ms | Allocations: 12971)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:42:28 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1599)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 25ms (Views: 18.9ms | ActiveRecord: 0.9ms | Allocations: 12959)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:42:34 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.6ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1598)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 25ms (Views: 18.5ms | ActiveRecord: 0.9ms | Allocations: 12958)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:43:04 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.7ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1600)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 27ms (Views: 19.7ms | ActiveRecord: 1.1ms | Allocations: 12960)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:43:07 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1021)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.9ms | Allocations: 10879)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:43:49 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.7ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.3ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1599)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 24ms (Views: 18.3ms | ActiveRecord: 1.0ms | Allocations: 12959)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:43:51 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1021)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.9ms | Allocations: 10878)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:44:35 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.3ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.8ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1598)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 30ms (Views: 22.1ms | ActiveRecord: 1.3ms | Allocations: 12964)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:45:07 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.8ms | Allocations: 257)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1594)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 28ms (Views: 20.7ms | ActiveRecord: 1.2ms | Allocations: 12954)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:45:46 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.1ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.6ms | Allocations: 267)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1590)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 25ms (Views: 18.6ms | ActiveRecord: 0.9ms | Allocations: 12950)
+
+
+Started GET "/organizations" for ::1 at 2020-07-06 06:46:23 -0400
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  ↳ app/views/organizations/index.html.erb:15
+  Rendered organizations/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 12440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.9ms | Allocations: 21132)
+
+
+Started GET "/events" for ::1 at 2020-07-06 06:46:24 -0400
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:17
+  Rendered events/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2351)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.7ms | Allocations: 11057)
+
+
+Started GET "/users/716/profiles/new" for ::1 at 2020-07-06 06:46:25 -0400
+Processing by ProfilesController#new as HTML
+  Parameters: {"user_id"=>"716"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:19:in `new'
+  Rendering profiles/new.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (Duration: 4.1ms | Allocations: 7130)
+  Rendered profiles/new.html.erb within layouts/application (Duration: 12.9ms | Allocations: 7474)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 25.9ms | ActiveRecord: 0.7ms | Allocations: 22741)
+
+
+Started GET "/" for ::1 at 2020-07-06 06:46:27 -0400
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:4:in `home'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 716], ["LIMIT", 1]]
+  ↳ app/controllers/pages_controller.rb:5:in `home'
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (privacy = 0)[0m
+  ↳ app/controllers/pages_controller.rb:7:in `home'
+  [1m[36mInvitation Load (0.2ms)[0m  [1m[34mSELECT "invitations".* FROM "invitations" WHERE (user_id = 716)[0m
+  ↳ app/controllers/pages_controller.rb:10:in `home'
+  Rendering pages/home.html.erb within layouts/application
+  Rendered events/_event_tile.html.erb (Duration: 0.4ms | Allocations: 108)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered events/_event_tile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 716], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 1.0ms | Allocations: 10897)
+
+

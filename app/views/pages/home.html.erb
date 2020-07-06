@@ -2,28 +2,32 @@
   <h2>Welcome to SocialEvent Organization App</h2>
 </div>
 <%if current_user %>
-  <div class = "column">
-    <%=link_to "Invitations", invitations_url %>
-  </div>
   <h4> Look at all this public events</h4>
-  <div class="row event-list">
-    <% @public_events.each do |event| %>
-      <%= render partial: 'events/event_tile', locals: { event: event } %>
-    <% end %>
-  <%else %>
-  <div class ="row ml-0 tab-pane">
-    <%= link_to "Sing in " , new_user_session_path %>
+  <div class = "column">
+    <div class="row event-list">
+      <% @public_events.each do |event| %>
+        <%= render partial: 'events/event_tile', locals: { event: event } %>
+      <% end %>
+    </div>
   </div>
-  <div class= "row ml-0  ">
-    <h3>
-      Don't have an account?
-    </h3>
-    <br>
-        <h4>
-          <%= link_to "Join us" , new_user_registration_path%>
-        </h4>
-    </br>
+  <div class = "table">
+    <p>Check out your invitations here</p>
+    <%=link_to "Invitations", invitations_path%>
   </div>
+    <%else %>
+    <div class ="row ml-0 tab-pane">
+      <%= link_to "Sing in " , new_user_session_path %>
+    </div>
+    <div class= "row ml-0  ">
+      <h3>
+        Don't have an account?
+      </h3>
+      <br>
+          <h4>
+            <%= link_to "Join us" , new_user_registration_path%>
+          </h4>
+      </br>
+    </div>
 <%end %>
 </div>
 

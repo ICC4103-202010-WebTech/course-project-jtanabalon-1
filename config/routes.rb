@@ -11,12 +11,7 @@ Rails.application.routes.draw do
   resources :users do
     resource :profiles
     resource :events
-    resource :invitations do
-      resource :events
-      resource :vote do
-        resource :answer
-      end
-    end
+    resource :invitations
   end
   resources :events do
     resources :video_events
